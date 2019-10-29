@@ -10,7 +10,7 @@ class Form extends Component {
 
 
   render() {
-    const { label, type, placeholder, name } = this.props;
+    const { label, type, placeholder, name, onChange } = this.props;
     return (
       <div className="form-group">
         <label className="sr-only">{label}</label>
@@ -19,6 +19,7 @@ class Form extends Component {
           className="form-control"
           placeholder={placeholder}
           name={name}
+          onChange={onChange}
      />
       </div>
     );

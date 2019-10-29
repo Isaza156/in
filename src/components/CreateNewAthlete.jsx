@@ -9,19 +9,21 @@ class CreateNewAthlete extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+       
+    };
 
     this.forms = {
       form
     };
-
+    this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleClick = () => {
-      console.log(this.state)
-  }
+    console.log(this.state);
+  };
 
   handleChange = e => {
     this.setState({
@@ -30,10 +32,10 @@ class CreateNewAthlete extends Component {
     });
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    axios.post("http://localhost:3000/athletes", this.state)
-    };
+  handleSubmit = () => {
+    console.log('entrando al submit con ' + this.state)
+    axios.post("http://localhost:3000/athletes", this.state);
+  };
 
   render() {
     return (
@@ -50,12 +52,19 @@ class CreateNewAthlete extends Component {
                     placeholder={label.placeholder}
                     name={label.name}
                     onChange={this.handleChange}
+                    value={label.value}
                   />
                 </Grid>
               );
             })}
           </div>
-          <button className="btn btn-lg btn-success" type="submit" onClick={this.handleClick}>Enviar</button>
+          <button
+            className="btn btn-lg btn-success"
+            type="submit"
+            onClick={this.handleClick}
+          >
+            Enviar
+          </button>
         </form>
       </>
     );
