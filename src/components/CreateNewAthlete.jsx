@@ -5,17 +5,20 @@ import Grid from "../super-components/Grid";
 import { form } from "../assets/forms/SportTraining";
 import axios from "axios";
 import Select from "../super-components/Select";
-import Option from "../super-components/Option.jsx"
+import Option from "../super-components/Option.jsx";
+import ButtonSend from "../super-components/ButtonSend";
+import ButtonBack from "../super-components/ButtonBack";
+import CheckBox from "../super-components/CheckBox";
+import Radio from "../super-components/Radio";
 
 class CreateNewAthlete extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-    };
+    this.state = {};
 
     this.forms = {
-      form,
+      form
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -66,11 +69,25 @@ class CreateNewAthlete extends Component {
                       option={label.options[0].name}
                       required
                     >
-                      {label.options.map(obj=>{
-                        if(obj.id !== "0"){
-                         return <Option valueOption={obj.name} key={obj.id} idOption={obj.id} dataOption={obj.name}/>
-                        }else{
-                          return <Option valueOption="" key={obj.id} idOption={obj.id} dataOption={obj.name}/>
+                      {label.options.map(obj => {
+                        if (obj.id !== "0") {
+                          return (
+                            <Option
+                              valueOption={obj.name}
+                              key={obj.id}
+                              idOption={obj.id}
+                              dataOption={obj.name}
+                            />
+                          );
+                        } else {
+                          return (
+                            <Option
+                              valueOption=""
+                              key={obj.id}
+                              idOption={obj.id}
+                              dataOption={obj.name}
+                            />
+                          );
                         }
                       })}
                     </Select>
@@ -79,13 +96,14 @@ class CreateNewAthlete extends Component {
               );
             })}
           </div>
-          <button
-            className="btn btn-lg btn-success"
-            type="submit"
-            onClick={this.handleClick}
-          >
-            Enviar
-          </button>
+          <CheckBox title="Vive Solo" id="1" />
+          <CheckBox title="Trabaja" id="2" />
+          <Radio title="Soltero" id="3" />
+          <Radio title="Casado" id="4" />
+          <div className="d-flex justify-content-between">
+            <ButtonBack onClick={this.handleClick} title="Cancelar" />
+            <ButtonSend onClick={this.handleClick} title="Enviar" />
+          </div>
         </form>
       </>
     );

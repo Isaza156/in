@@ -17367,6 +17367,24 @@
       "stratum": "9",
       "email": "laschelas@las.com",
       "id": 1058
+    },
+    {
+      "firstName": "Jonathan",
+      "lastName": "Isaza",
+      "address": "Calle 77 D 88-46, Antioquia",
+      "municipality": "Medellin",
+      "email": "jonathan.isaza14@gmail.com",
+      "gender": "Masculino",
+      "documentType": "CC",
+      "document": "1152201379",
+      "birthDate": "1993-06-28",
+      "birthPlace": "Medellin",
+      "eps": "Coomeva",
+      "club": "Atletico Nacional",
+      "category": "A",
+      "phone": "3122678810",
+      "stratum": "2",
+      "id": 1059
     }
   ]
 }
